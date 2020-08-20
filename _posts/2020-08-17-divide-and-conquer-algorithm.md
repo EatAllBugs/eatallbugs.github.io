@@ -59,7 +59,7 @@ author: Yongsheng
 
 ### 1，求最大连续子数组的和
 
-![image-20200819222813871](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20200819222813871.png)
+![](/images/leetcode_42.png)
 
 | 常见解法 |      时间复杂度      | 空间复杂度 |
 | :------: | :------------------: | :--------: |
