@@ -1,13 +1,12 @@
-```
+---
 layout: post
 title:  构造函数和析构函数
 categories: C++
 tags: C++ class
 author: Yongsheng
-```
-
-[TOC]
-
+---
+* content
+{:toc}
 在C++中，创建对象时调用构造函数进行初始化，对象结束生命周期时调用析构函数进行“善后”工作。
 
 
