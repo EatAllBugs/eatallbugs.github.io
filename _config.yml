@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: YsL
+title: Eat ALL Bugs
 brief-intro: C++ and algorithm Engineer
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://eatallbugs.github.io" # the base hostname & protocol for your site
@@ -15,7 +15,7 @@ permalink: /:year/:month/:day/:title/
 
 # other links
 twitter_username:
-facebook_username: gaohaoyang.water
+facebook_username: 
 github_username:  EatAllBugs
 email: yongsheng0701@163.com
 weibo_username: 
@@ -35,7 +35,7 @@ disqus_shortname: liuyongsheng
 # 百度统计 id，将统计代码替换为自己的百度统计id，即
 # hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
 # xxxxx字符串
-baidu_tongji_id: cf8506e0ef223e57ff6239944e5d46a4
+baidu_tongji_id: 1f5b5fdae529d6841437b939648990cd
 google_analytics_id: UA-72449510-4 # google 分析追踪id
 
 # Build settings
