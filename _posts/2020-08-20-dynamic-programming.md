@@ -9,7 +9,10 @@ author: Yongsheng
 * content
 {:toc}
 
+
 动态规划（英语：Dynamic programming，简称 DP）是一种在数学、管理科学、计算机科学、经济学和生物信息学中使用的，通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。
+
+
 
 ## 一、基本概念
 
