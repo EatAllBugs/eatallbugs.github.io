@@ -149,7 +149,7 @@ int maxSubArray(vector<int>& nums) {
 
 ### 2，二分查找
 
-![image-20200820094505098](/home/lys/.config/Typora/typora-user-images/image-20200820094505098.png)
+![](/images/leetcode_704.png)
 
 代码：
 
