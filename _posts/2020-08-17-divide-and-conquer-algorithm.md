@@ -59,7 +59,7 @@ author: Yongsheng
 
 ### 1，求最大连续子数组的和
 
-![](/images/leetcode_42.png)
+![](/images/leetcode_53.png)
 
 | 常见解法 |      时间复杂度      | 空间复杂度 |
 | :------: | :------------------: | :--------: |
@@ -149,7 +149,7 @@ int maxSubArray(vector<int>& nums) {
 
 ### 2，二分查找
 
-![](/images/leetcode_704.png)
+![](/images/leetcode_53.png)
 
 代码：
 
