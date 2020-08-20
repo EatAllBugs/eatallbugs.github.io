@@ -35,7 +35,7 @@ author: Yongsheng
 ```c++
 class solution{
 	public:
-		solution(){}
+    	solution(){}
     	//进行重载
     	solution(int A1,intA2,int A3): A1_(A1),A2_(A2),A3(A3){}
 };
@@ -61,7 +61,7 @@ class solution{
 class solution{
 	public:
 		solution(){}
-		~solution(){}
+    	~solution(){}
 };
 ```
 
@@ -114,7 +114,7 @@ class solution{
 
 
 
-### 继承构造函数、
+### 继承构造函数
 
 
 
