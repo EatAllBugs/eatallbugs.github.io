@@ -6,19 +6,8 @@ tags: sorting algorithm
 author: Yongsheng
 ---
 
-
-
-
-
-
-
-
 * content
-{toc}
-
-
-
-
+[:toc]
 
 所谓排序，将一个数组中的数字按照递增或递减的顺序排列出来。将递增数组reverse可以得到递减数组，所以通常只考虑递增排序。
 
