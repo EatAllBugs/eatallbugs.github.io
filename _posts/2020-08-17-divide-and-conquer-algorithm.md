@@ -56,11 +56,11 @@ author: Yongsheng
 
 | 常见解法 |      时间复杂度      | 空间复杂度 |
 | :------: | :------------------: | :--------: |
-| 暴力解法 |        O(N^2)        |            |
-| 分支算法 | *O*(*N**l**o**g**N*) |            |
-| 动态规划 |         O(N)         |            |
+| 暴力解法 |        O(N^2)        |    O(1)    |
+| 分支算法 | *O*(*N**l**o**g**N*) |  O(logN)   |
+| 动态规划 |         O(N)         |    O(1)    |
 
-##### 暴力解法：时间超时
+#### 暴力解法：时间超时
 
 ```c++
     int maxSubArray(vector<int>& nums) {
@@ -79,7 +79,7 @@ author: Yongsheng
         return max;
 ```
 
-##### 贪心解法：源自leetcode题解
+#### 贪心解法：源自leetcode题解
 
 ```c++
 /*
@@ -117,9 +117,9 @@ int maxSubArray(vector<int>& nums) {
 }
 ```
 
-##### 分治解法：
+#### 分治解法：
 
-```
+```c++
 /*
  * 方法二 分治法 O(nlogn)
  *
@@ -138,11 +138,103 @@ int maxSubArray(vector<int>& nums) {
  * 可使用贪心算法求最大子串值，再合并为原始的最大子串值
  * */
 
+int maxSubArray2(std::vector<int> &nums) {
+    assert(!nums.empty());
+
+    return helper(nums, 0, nums.size() - 1);
+}
+
+int helper(std::vector<int> &nums, int left, int right) {
+    // 分解到一个值时返回该值
+    if (left == right) {
+        return nums[left];
+    }
+
+    // 求中点值
+    int mid = left + (right - left) / 2;
+
+    // 中点左边的最大值
+    int leftSum = helper(nums, left, mid);
+    // 中点右边的最大值
+    int rightSum = helper(nums, mid + 1, right);
+    // 横跨中点的最大值
+    int croSum = crossSum(nums, left, right, mid);
+
+    // 返回以上三种情况中的最大值
+    return std::max(std::max(leftSum, rightSum), croSum);
+}
+
+int crossSum(std::vector<int> &nums, int left, int right, int mid) {
+    // 分解到一个值时返回该值
+    if (left == right) {
+        return nums[left];
+    }
+
+    // 贪心法求左边的最大值
+    int leftSubsum = INT_MIN;
+    int curSum = 0;
+    for (int i = mid; i > left - 1; i--) {
+        curSum += nums[i];
+        leftSubsum = std::max(leftSubsum, curSum);
+    }
+
+    // 贪心法求右边的最大值
+    int rightSubsum = INT_MIN;
+    curSum = 0;
+    for (int i = mid + 1; i < right + 1; i++) {
+        curSum += nums[i];
+        rightSubsum = std::max(rightSubsum, curSum);
+    }
+
+    return leftSubsum + rightSubsum;
+}
 ```
+
+#### 动态规划：
+
+```c++
+/*
+ * 方法三 动态规划—— Kadane算法 O(n)
+ *
+ * 在整个数组或在固定大小的滑动窗口中找到总和或最大值或最小值的问题，
+ * 可通过动态规划(DP)在线性时间内解决
+ *
+ * 两种标志DP适用于数组：
+ * 1. 常数空间，沿数组移动并子啊原数组修改；
+ * 2. 线性空间，首先沿left->right方向移动，然后沿right->left方向移动，最后合并结果。
+ *
+ * 本题可通过修改数组跟踪当前位置的最大和，
+ * 在知道当前位置的最大和后更新全局最大和。
+ * */
+
+int maxSubArray3(std::vector<int> &nums) {
+    assert(!nums.empty());
+
+    int n = nums.size();
+    int maxSum = nums[0];
+
+    // 如果当前值小于0，
+    // 重新开始(全局最大值更新)
+    for (int i = 1; i < n; i++) {
+        // 更新当前的最大值
+        if (nums[i - 1] > 0) {
+            nums[i] += nums[i - 1];
+        }
+        // 更新全局的最大值
+        maxSum = std::max(nums[i], maxSum);
+    }
+
+    return maxSum;
+}
+```
+
+
 
 ### 2，二分查找
 
 ![](/images/leetcode_53.png)
+
+第一种暴力解法，遍历一遍，时间复杂度是O(n)。可是遍历的解法没有利用到数组是有序的这一条件。采用分治算法，将数组二等分，逐步判断target所在的区域，执行log(n)次就能找到结果。分治算法的时间复杂度是O(log(n))。
 
 代码：
 
@@ -169,7 +261,19 @@ public:
 };
 ```
 
+### 3,大整数乘法
+
+![](D:\github_code\eatallbugs.github.io\images\leetcode-43.png)
+
+通常将大数转化成字符串进行处理。
+
+#### KaraTsuba乘法：
 
 
 
+#### 分治算法求解：
+
+```
+
+```
 
